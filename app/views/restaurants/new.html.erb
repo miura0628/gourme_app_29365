@@ -1,0 +1,12 @@
+<h1>🍴グルメ登録🍴</h1>
+<%= form_with local: true do |f| %>
+  <div>店舗名</div>
+  <div><%= f.text_area :restaurant_name, class:"restaurant_name", placeholder:"例) マサラマスター鶴岡店" %></div>
+  <%# :comment_id %>
+  <%# :genre_id %>
+  <%# :prefecture_id %>
+  <div>市区町村</div>
+  <div><%= f.text_area :city, class:"city", placeholder:"例) 横浜市都筑区池辺町" %></div>
+  <div><%= f.submit "登録する" %></div>
+<% end %>
+<%= link_to '戻る', root_path %>
