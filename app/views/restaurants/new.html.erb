@@ -2,6 +2,8 @@
 <%= form_with local: true do |f| %>
   <div>店舗名を入力してください</div>
   <div><%= f.text_area :restaurant_name, class:"restaurant_name", placeholder:"例) マサラマスター鶴岡店" %></div>
+  <div>写真を選択してください</div>
+  <%= f.file_field :image %>
   <%# f.collection_select(保存されるカラム名, オブジェクトの配列, カラムに保存される項目, 選択肢に表示されるカラム名, オプション, htmlオプション) %>
   <div>満足度</div>
   <div>
@@ -9,7 +11,7 @@
   </div>
   <div>ジャンル</div>
   <div>
-    <%= f.collection_select(:genle_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
   </div>
   <div>都道府県</div>
   <div>
