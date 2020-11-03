@@ -1,10 +1,20 @@
 <h1>🍴グルメ登録🍴</h1>
 <%= form_with local: true do |f| %>
-  <div>店舗名</div>
+  <div>店舗名を入力してください</div>
   <div><%= f.text_area :restaurant_name, class:"restaurant_name", placeholder:"例) マサラマスター鶴岡店" %></div>
-  <%# :comment_id %>
-  <%# :genre_id %>
-  <%# :prefecture_id %>
+  <%# f.collection_select(保存されるカラム名, オブジェクトの配列, カラムに保存される項目, 選択肢に表示されるカラム名, オプション, htmlオプション) %>
+  <div>満足度</div>
+  <div>
+    <%= f.collection_select(:comment_id, Comment.all, :id, :name, {}, {class:"comment-select"}) %>
+  </div>
+  <div>ジャンル</div>
+  <div>
+    <%= f.collection_select(:genle_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+  <div>都道府県</div>
+  <div>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"prefecture-select"}) %>
+  </div>
   <div>市区町村</div>
   <div><%= f.text_area :city, class:"city", placeholder:"例) 横浜市都筑区池辺町" %></div>
   <div><%= f.submit "登録する" %></div>
