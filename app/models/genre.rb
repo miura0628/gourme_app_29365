@@ -10,8 +10,9 @@ class Genre < ActiveHash::Base
     { id: 8, name: '中華料理' },
     { id: 9, name: 'イタリアン' },
     { id: 10, name: 'フレンチ' },
-    { id: 11, name: 'ファーストフード'},
-    { id: 12, name: 'その他'}
+    { id: 11, name: 'ファストフード'},
+    { id: 12, name: 'スイーツ'},
+    { id: 13, name: 'その他'}
   ]
   include ActiveHash::Associations
   has_many :restaurants

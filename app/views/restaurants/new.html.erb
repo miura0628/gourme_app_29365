@@ -1,5 +1,7 @@
 <h1>🍴グルメ登録🍴</h1>
-<%= form_with local: true do |f| %>
+<%= form_with(model: @restaurant_address, url: restaurants_path, local: true) do |f| %>
+<%= render 'error_messages', model: @restaurant_address %>
+
   <div>店舗名を入力してください</div>
   <div><%= f.text_area :restaurant_name, class:"restaurant_name", placeholder:"例) マサラマスター鶴岡店" %></div>
   <div>写真を選択してください</div>
