@@ -1,5 +1,10 @@
 class AddressesController < ApplicationController
+
   def index
-    @addresses = Address.order("created_at DESC") 
+    @address = Address.new
+  end
+
+  def show
+    @address = Address.find(params[:id])
   end
 end

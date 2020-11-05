@@ -1,7 +1,9 @@
 <%= link_to 'グルメ登録する', new_restaurant_path %>
 <% @restaurants.each do |gourmet| %>
-  <div>店名：<%= gourmet.restaurant_name %></div>
-  <div><%= image_tag gourmet.image.variant(resize: '300x300'), class: 'gourmet-image' if gourmet.image.attached? %></div>
-  <div>満足度：<%= gourmet.comment.name %></div>
-  <div>　　　　　</div><%# ←全角五文字文空白%>
+  <%= link_to restaurant_path(gourmet.id), method: :get do %>
+    <div>店名：<%= gourmet.restaurant_name %></div>
+    <div><%= image_tag gourmet.image.variant(resize: '300x300'), class: 'gourmet-image' if gourmet.image.attached? %></div>
+    <div>満足度：<%= gourmet.comment.name %></div>
+  <% end %>
+    <div>　　　　　</div><%# ←全角五文字文空白%>
 <% end %>
