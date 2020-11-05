@@ -18,6 +18,11 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def show
+    @restaurant = Restaurant.find(params[:id])
+    @addresses = @address.restaurant
+  end
+
   private
   def restaurant_params
     params.require(:restaurant_address).permit(:image, :restaurant_name, :genre_id, :comment_id, :prefecture_id, :city)

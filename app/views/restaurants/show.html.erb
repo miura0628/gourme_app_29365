@@ -1,0 +1,10 @@
+<%= link_to '戻る', root_path %>
+<div>店名：<%= @restaurant.restaurant_name %></div>
+<div><%= image_tag @restaurant.image.variant(resize: '300x300'), class: 'restaurant-image' if @restaurant.image.attached? %></div>
+<div>満足度：<%= @restaurant.comment.name %></div>
+<div>ジャンル：<%= @restaurant.genre.name %></div>
+
+<% if @addresses %>
+<div>場所：<%= @addresses.prefecture %></div>
+<div><%= @addresses.city %></div>
+<% end %>
